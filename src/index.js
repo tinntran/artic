@@ -2,7 +2,7 @@ require('dotenv').config()
 const path = require('path')
 const express = require('express')
 const routers = require('./routers')
-const expHandlebars = require('express-handlebars')
+//const expHandlebars = require('express-handlebars')
 
 const db = require('./config/db')
 
@@ -15,8 +15,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, '../public')))
 
-app.engine('handlebars', expHandlebars())
-app.set('view engine', 'handlebars')
+app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'resources/views'))
 
 routers(app)
