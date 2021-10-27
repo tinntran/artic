@@ -1,8 +1,13 @@
 const Post = require('../models/post')
+const marked = require('marked')
 
 async function home(req, res) {
     const posts = await Post.find()
     res.render('home', { posts })
+}
+
+async function newPost(req, res) {
+    res.render('newPost')
 }
 
 async function addPost(req, res) {
@@ -13,9 +18,10 @@ async function addPost(req, res) {
 
     try {
         await newPost.save()
+        res.redirect('/')
     } catch (err) {
         console.error(err)
     }
 }
 
-module.exports = { home, addPost }
+module.exports = { home, addPost, newPost }
