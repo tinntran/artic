@@ -20,12 +20,16 @@
   },
   "homepage": "https://github.com/tinntran/post-app#readme",
   "dependencies": {
+    "dompurify": "^2.3.3",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
+    "jsdom": "^18.0.0",
     "marked": "^3.0.8",
-    "mongoose": "^6.0.12"
+    "method-override": "^3.0.0",
+    "mongoose": "^6.0.12",
+    "slugify": "^1.6.1"
   },
   "devDependencies": {
     "node-sass": "^6.0.1",
