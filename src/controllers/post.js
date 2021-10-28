@@ -8,7 +8,8 @@ async function home(req, res) {
 async function postSlug(req, res) {
     try {
         const post = await Post.findOne({ slug: req.params.slug })
-        res.render('postSlug', { post })
+        if (!post) res.redirect('/')
+        else res.render('postSlug', { post })
     } catch (err) {
         console.error(err)
         res.redirect('/')
@@ -22,6 +23,11 @@ async function newPost(req, res) {
 async function editPost(req, res) {
     const post = await Post.findOne({ slug: req.params.slug })
     res.render('editPost', { post })
+}
+
+async function updatePost(req, res) {
+    await Post.findOneAndUpdate({ slug: req.params.slug }, req.body)
+    res.redirect(`/${req.params.slug}`)
 }
 
 async function deletePost(req, res) {
@@ -43,4 +49,12 @@ async function addPost(req, res) {
     }
 }
 
-module.exports = { home, addPost, newPost, postSlug, deletePost, editPost, }
+module.exports = {
+    home,
+    addPost,
+    newPost,
+    postSlug,
+    deletePost,
+    editPost,
+    updatePost,
+}
