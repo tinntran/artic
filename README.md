@@ -1,5 +1,5 @@
 # post-app
 
-[LINCENSE](LINCENSE)
+[LICENSE](LICENSE)
 
 My post app
