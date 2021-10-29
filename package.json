@@ -14,7 +14,7 @@
     "url": "git+https://github.com/tinntran/post-app.git"
   },
   "author": "tinntran",
-  "license": "MIT`",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/tinntran/post-app/issues"
   },
@@ -29,6 +29,7 @@
     "marked": "^3.0.8",
     "method-override": "^3.0.0",
     "mongoose": "^6.0.12",
+    "pug": "^3.0.2",
     "slugify": "^1.6.1"
   },
   "devDependencies": {
