@@ -2,9 +2,8 @@ const Post = require('../models/post')
 const marked = require('marked')
 
 async function home(req, res) {
-    const posts = await Post.find()
-    res.render('home', { posts })
-}
+    const posts = await Post.find({}).sort({ createdAt: -1 })
+    res.render('home', { posts })}
 
 async function postSlug(req, res) {
     try {

@@ -26,12 +26,12 @@
                 </div>
                 <% } else { %>
                     <% posts.forEach(function(post) { %>
-                        <div class="mb-5">
+                        <div class="mb-3">
                             <a class="fs-3" href="<%= post.slug %>">
                                 <%= post.title %>
                             </a>
                             <p class="content text-muted">
-                                <%- post.content %>
+                                <%= post.content %>
                             </p>
                         </div>
                         <% }); %>
