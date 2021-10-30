@@ -3,13 +3,13 @@ const marked = require('marked')
 
 async function home(req, res) {
     const posts = await Post.find({}).sort({ createdAt: -1 })
-    res.render('home', { posts })}
+    res.render('home', { posts })
+}
 
 async function postSlug(req, res) {
     try {
         const post = await Post.findOne({ slug: req.params.slug })
-        if (!post) res.redirect('/')
-        else res.render('postSlug', { post, htmlContent: marked(post.content) })
+        res.render('postSlug', { post, htmlContent: marked(post.content) })
     } catch (err) {
         console.error(err)
         res.redirect('/')
