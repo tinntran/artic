@@ -17,12 +17,17 @@
 <body>
     <header>
         <%- include('./parts/navbar.ejs') %>
+        
     </header>
 
     <div class="container mt-4">
         <h1 class="mb-3 fw-bolder">
             <%= post.title %>
         </h1>
+        <p class="text-muted">
+            <%= new Date(post.updatedAt).toDateString() %>
+        </p>
+        <hr>
         <div class="mb-5 d-inline-flex">
             <a class="btn btn-warning btn-sm me-1" href="/edit/<%= post.slug %>">Edit</a>
             <form action="/delete/<%= post.slug %>?_method=DELETE" method="post">
