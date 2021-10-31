@@ -1,7 +1,7 @@
 const Post = require('../models/post')
 const marked = require('marked')
 
-async function home(req, res) {
+async function index(req, res) {
     const posts = await Post.find({}).sort({ createdAt: -1 })
     res.render('home', { posts })
 }
@@ -51,7 +51,7 @@ async function addPost(req, res) {
 }
 
 module.exports = {
-    home,
+    index,
     addPost,
     newPost,
     postSlug,

@@ -7,7 +7,7 @@ router.get('/edit/:slug', controller.editPost)
 router.get('/new-post', controller.newPost)
 router.get('/:slug', controller.postSlug)
 
-router.get('/', controller.home)
+router.get('/', controller.index)
 
 router.post('/add-post', controller.addPost)
 router.put('/update/:slug', controller.updatePost)
