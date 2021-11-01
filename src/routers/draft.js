@@ -2,6 +2,7 @@ const router = require('express').Router()
 const controller = require('../controllers/draft')
 
 router.delete('/:slug', controller.deleteDraft)
+router.delete('/publish/:slug', controller.publishDraft)
 router.put('/:slug', controller.updateDraft)
 router.get('/edit/:slug', controller.edit)
 router.get('/:slug', controller.view)

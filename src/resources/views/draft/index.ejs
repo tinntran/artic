@@ -18,24 +18,33 @@
     </header>
 
     <div class="container mt-4">
-        <% drafts.forEach(function(draft) {%>
-            <div class="card mb-3">
-                <div class="card-header fs-5">
-                    <%= draft.title %>
-                </div>
-                <div class="card-body text-muted">
-                    <div class="content">
-                        <p>
-                            <%= draft.content %>
-                        </p>
+        <% if (drafts.length == 0) { %>
+            <div>
+                <h2 class="text-muted d-inline-flex me-2">Nothing to publish...</h2>
+                <a class="fs-5 d-inline-flex" href="/new-post">Create one now!</a>
+            </div>
+        <% } else { %>
+            <% drafts.forEach(function(draft) {%>
+                <div class="card mb-3">
+                    <div class="card-header fs-5">
+                        <%= draft.title %>
+                    </div>
+                    <div class="card-body text-muted">
+                        <div class="content">
+                            <p>
+                                <%= draft.content %>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <form action="/draft/publish/<%= draft.slug %>?_method=DELETE" method="post" 
+                            class="d-inline">
+                            <button class="btn btn-primary btn-sm">Publish</button>
+                        </form>
+                        <a role="button" href="/draft/<%= draft.slug %>" class="btn btn-secondary btn-sm">Preview</a>
                     </div>
                 </div>
-                <div class="card-footer bg-transparent">
-                    <button class="btn btn-primary btn-sm">Publish</button>
-                    <a role="button" href="/draft/<%= draft.slug %>" class="btn btn-secondary btn-sm">Preview</a>
-                </div>
-            </div>
-        <% }) %>
+        <% }) } %>
     </div>
 
 

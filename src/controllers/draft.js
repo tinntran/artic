@@ -1,4 +1,5 @@
 const Draft = require('../models/draft')
+const Post = require('../models/post')
 const marked = require('marked')
 
 async function index(req, res) {
@@ -14,6 +15,22 @@ async function view(req, res) {
 async function edit(req, res) {
     const draft = await Draft.findOne({ slug: req.params.slug })
     res.render('draft/editDraft', { draft })
+}
+
+async function publishDraft(req, res) {
+    try {
+        const draft = await Draft.findOne({ slug: req.params.slug})
+        const newPost = new Post({
+            title: draft.title,
+            content: draft.content,
+        })
+        await newPost.save()
+        await Draft.findOneAndDelete({ slug: req.params.slug })
+        res.redirect(`/${newPost.slug}`)
+    } catch (error) {
+        console.error(error)
+        res.redirect('/')
+    }
 }
 
 async function deleteDraft(req, res) {
@@ -35,6 +52,7 @@ module.exports = {
     index,
     view,
     edit,
+    publishDraft,
     deleteDraft,
     updateDraft,
 }

@@ -28,6 +28,9 @@
         </p>
         <hr>
         <div class="mb-5 d-inline-flex">
+            <form action="/draft/publish/<%= draft.slug %>?_method=DELETE" method="post" class="d-inline me-1">
+                <button class="btn btn-primary btn-sm">Publish</button>
+            </form>
             <a class="btn btn-warning btn-sm me-1" href="/draft/edit/<%= draft.slug %>">Edit</a>
             <form action="/draft/<%= draft.slug %>?_method=DELETE" method="post">
                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
