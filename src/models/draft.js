@@ -1,4 +1,6 @@
 const mongoose = require('mongoose')
+const slugify = require('slugify')
+const uuid = require('uuid')
 
 const schema = new mongoose.Schema({
     title: { type: String, required: true },
