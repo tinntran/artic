@@ -37,11 +37,13 @@
                         </div>
                     </div>
                     <div class="card-footer bg-transparent">
+                        <a role="button" href="/draft/<%= draft.slug %>" class="btn btn-secondary btn-sm">
+                            Preview & Edit
+                        </a>
                         <form action="/draft/publish/<%= draft.slug %>?_method=DELETE" method="post" 
                             class="d-inline">
                             <button class="btn btn-primary btn-sm">Publish</button>
                         </form>
-                        <a role="button" href="/draft/<%= draft.slug %>" class="btn btn-secondary btn-sm">Preview</a>
                     </div>
                 </div>
         <% }) } %>
