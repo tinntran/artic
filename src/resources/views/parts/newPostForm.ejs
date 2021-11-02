@@ -1,10 +1,17 @@
 <form method="post" action="/add-post" class="new-post-form">
     <div class="form-group mt-4">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" class="form-control" maxlength="256" required>
+        <input type="text" name="title" id="title" class="form-control" placeholder="Title" 
+        maxlength="256" required>
     </div>
     <div class="form-group mt-3">
-        <textarea name="content" id="content" class="CodeMirror" rows="7" required></textarea>
+        <div class="card card-codemirror">
+            <div class="card-header">
+                Content
+            </div>
+            <div class="card-body p-0">
+                <textarea name="content" id="content" class="CodeMirror" rows="7" required></textarea>
+            </div>
+        </div>
     </div>
 
     <button type="submit" name="isDraft" value="no" class="btn btn-primary btn-lg mt-3">Submit</button>
