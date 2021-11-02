@@ -27,6 +27,9 @@ async function editPost(req, res) {
 }
 
 async function updatePost(req, res) {
+    Object.keys(req.body).map(k =>
+        req.body[k] = typeof req.body[k] == 'string' ? req.body[k].trim() : req.body[k]
+    )
     await Post.findOneAndUpdate({ slug: req.params.slug }, req.body)
     res.redirect(`/${req.params.slug}`)
 }
