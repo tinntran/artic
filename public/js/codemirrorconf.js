@@ -8,5 +8,5 @@ const editor = CodeMirror.fromTextArea(content, {
 editor.setSize(null, '24rem')
 
 editor.on('change', () => {
-    content.textContent = editor.getValue()
+    content.textContent = editor.getValue().trim()
 })

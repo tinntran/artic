@@ -40,6 +40,9 @@ async function deleteDraft(req, res) {
 
 async function updateDraft(req, res) {
     try {
+        Object.keys(req.body).map(k =>
+            req.body[k] = typeof req.body[k] == 'string' ? req.body[k].trim() : req.body[k]
+        )
         await Draft.findOneAndUpdate({ slug: req.params.slug }, req.body)
         res.redirect(`/draft/${req.params.slug}`)
     } catch (err) {
