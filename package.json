@@ -1,7 +1,7 @@
 {
   "name": "post-app",
   "version": "1.0.0",
-  "description": "My post app",
+  "description": "My first SSR ever",
   "main": "src/index.js",
   "scripts": {
     "start": "node .",
