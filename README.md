@@ -9,7 +9,8 @@
 ## How does it work?
 
 - This is the **S**erver-**S**ide **R**endering website where you can post anything with markdown format.
-- Articles, draft articles, etc. stored in the MongoDB database.
+- Articles, draft articles, etc. stored in the [MongoDB database](https://www.mongodb.com/).
+- The template engine is [EJS](https://ejs.co/) which is an _"Embedded JavaScript templating"_.
 
 ## Using & developing
 
