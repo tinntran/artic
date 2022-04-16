@@ -1,5 +1,5 @@
 {
-  "name": "post-app",
+  "name": "artic",
   "version": "1.0.0",
   "description": "My first SSR ever",
   "main": "src/index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tinntran/post-app.git"
+    "url": "git+https://github.com/tinntran/artic.git"
   },
   "author": "tinntran",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tinntran/post-app/issues"
+    "url": "https://github.com/tinntran/artic/issues"
   },
-  "homepage": "https://github.com/tinntran/post-app#readme",
+  "homepage": "https://github.com/tinntran/artic#readme",
   "dependencies": {
     "dompurify": "^2.3.3",
     "dotenv": "^10.0.0",
