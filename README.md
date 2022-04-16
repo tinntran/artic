@@ -8,7 +8,7 @@
 
 ## How does it work?
 
-- This is the **S**erver-**S**ide **R**endering website where you can post anything with the markdown format.
+- This is the **S**erver-**S**ide **R**endering website where you can post anything with markdown format.
 - Articles, draft articles, etc. stored in the MongoDB database.
 
 ## Using & developing
