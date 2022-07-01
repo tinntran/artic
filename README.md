@@ -2,8 +2,6 @@
 
 > My first SSR website ever! 😻
 
-![I did it dad!](https://media.giphy.com/media/l41Ye5dhLPqILtT2w/giphy.gif)
-
 ---
 
 ## How does it work?
